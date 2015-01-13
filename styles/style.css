@@ -9,6 +9,7 @@ div, section {
 
 #topflagWhite {
 	height: 25px;
+	text-align: center;
 }
 
 #flagBlueStripe {
@@ -18,7 +19,8 @@ div, section {
 
 #middleflagWhite {
 	height: 75px;
-	
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 
@@ -30,10 +32,20 @@ div, section {
 }
 
 .questionSection {
-   
+   width: 60%;
+   height: 150px;
+   margin: auto;
+   text-align: center;
 }
 
-.answerFeedback {
+.responseSection {
+   width: 60%;
+   height: 150px;
+   margin: auto;
+   text-align: center;
+}
+
+.answerTracker {
    margin-top: 20px;
    width: 200px;
    float: right;
@@ -67,7 +79,9 @@ img {
 #headerStarList > li {
 	display: inline;
 	list-style-type: none;
+	padding: 20px;
 }
+
 
 
 
