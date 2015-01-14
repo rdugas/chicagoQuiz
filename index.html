@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css" />
 
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
     <!-- google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
 
@@ -53,27 +56,32 @@
 
     <section class="answerTracker">
         <div id="answerProgress">
-            <p>Response Feedback</p>
+            <!-- <p>Response Feedback</p> -->
             <ul id="responseStarList">
                 <li>
                     <span id="flagNumber">1</span>
                     <img id="responseStar1" src="images/star.png">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
                 </li>
                 <li>
                     <span id="flagNumber">2</span>
                     <img id="responseStar2" src="images/star.png">
+                    <span class="glyphicon glyphicon-thumbs-down"></span>
                 </li>
                 <li>
                     <span id="flagNumber">3</span>
                     <img id="responseStar3" src="images/star.png">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
                 </li>
                 <li>
                     <span id="flagNumber">4</span>
                     <img id="responseStar4" src="images/star.png">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
                 </li>
                 <li>
                     <span id="flagNumber">5</span>
                     <img id="responseStar5" src="images/star.png">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
                 </li>
 
             </ul>
@@ -83,8 +91,8 @@
 
     <section class="questionSection">
         <div id="questionIntro">
-        	<p>Are you ready to test your knowledge of Chicago?</p>
-			<input type="button" id="startButton" class="button" name="start" value="Start Game"/>
+            <p>Are you ready to test your knowledge of Chicago?</p>
+            <input type="button" id="startButton" class="button" name="start" value="Start Game" />
         </div>
         <div id="question1">First cool question</div>
         <div id="question2">Second cool question</div>
@@ -96,35 +104,51 @@
 
     <section class="responseSection">
         <div id="responseContainer">
-        <h1>Choose The Best Answer and Click Choose!</h1>
-			<ul id="answerChoiceList1">
-				<li id="question1Choice1">one</li>
-				<li id="question1Choice2">two</li>
-				<li id="question1Choice3">three</li>
-			</ul>
-			<ul id="answerChoiceList2">
-				<li id="question1Choice1">one</li>
-				<li id="question1Choice2">two</li>
-				<li id="question1Choice3">three</li>
-			</ul>
-			<ul id="answerChoiceList3">
-				<li id="question1Choice1">one</li>
-				<li id="question1Choice2">two</li>
-				<li id="question1Choice3">three</li>
-			</ul>
-			<ul id="answerChoiceList4">
-				<li id="question1Choice1">one</li>
-				<li id="question1Choice2">two</li>
-				<li id="question1Choice3">three</li>
-			</ul>
-			<ul id="answerChoiceList5">
-				<li id="question1Choice1">one</li>
-				<li id="question1Choice2">two</li>
-				<li id="question1Choice3">three</li>
-			</ul>
-			<input type="button" id="chooseButton" class="submit" name="coose" value="Choose"/>	
+            <p>Choose The Best Answer and Click Choose!</p>
+            <ul class="answerList" id="answerChoiceList1">
+                <!-- hack - give each radio button same name so only one can be selected -->
+                <li class="answer" id="question1Answer">
+                    <input type="radio" name="one">one</li>
+                <li class="answer">
+                    <input type="radio" name="one">one</li>
+                <li class="answer">
+                    <input type="radio" name="one">one</li>
+            </ul>
+            <ul class="answerList" id="answerChoiceList2">
+                <li class="answer">
+                    <input type="radio" name="two">one</li>
+                <li class="answer">
+                    <input type="radio" name="two">one</li>
+                <li class="answer" id="question2Answer">
+                    <input type="radio" name="two">one</li>
+            </ul>
+            <ul class="answerList" id="answerChoiceList3">
+                <li class="answer" id="question3Answer">
+                    <input type="radio" name="three">one</li>
+                <li class="answer">
+                    <input type="radio" name="three">one</li>
+                <li class="answer">
+                    <input type="radio" name="three">one</li>
+            </ul>
+            <ul class="answerList" id="answerChoiceList4">
+                <li class="answer">
+                    <input type="radio" name="four">one</li>
+                <li class="answer" id="question4Answer">
+                    <input type="radio" name="four">one</li>
+                <li class="answer">
+                    <input type="radio" name="four">one</li>
+            </ul>
+            <ul class="answerList" id="answerChoiceList5">
+                <li class="answer" id="question5Answer">
+                    <input type="radio" name="five">one</li>
+                <li class="answer">
+                    <input type="radio" name="five">one</li>
+                <li class="answer">
+                    <input type="radio" name="five">one</li>
+            </ul>
+            <input type="button" id="chooseButton" class="submit" name="coose" value="Choose" />
         </div>
-        	
+
     </section>
 
     <section class="firstFooterSection">
