@@ -40,6 +40,27 @@
    height: 120px;
    margin: auto;
    text-align: center;
+   position: relative;
+   font-family: 'Open Sans', serif;
+}
+
+#startButton {
+	text-align: center;
+}
+
+/*#question1, */
+#question2, #question3, #question4, #question5 {
+	display: none; 
+	/*initial state hidden*/
+}
+
+/*#answerChoiceList1 */
+#answerChoiceList2
+,#answerChoiceList3
+,#answerChoiceList4
+,#answerChoiceList5 {
+	display: none; 
+	/*initial state hidden*/
 }
 
 .responseSection {
@@ -47,6 +68,11 @@
    height: 120px;
    margin: auto;
    text-align: center;
+   font-family: 'Open Sans', serif;
+}
+
+#responseContainer {
+   /*display: none; initial state*/
 }
 
 .firstFooterSection {
@@ -67,6 +93,11 @@
    margin-top: 20px;
    width: 200px;
    float: right;
+   position: absolute; 
+   /*need to learn more about position and float for layering divs*/
+   right: 0;
+   /*display: none;*/
+
 }
 
 /*li {
@@ -84,6 +115,7 @@
 	vertical-align: middle;
 	border: 0;
 }
+
 
 #responseStar1, #responseStar2, #responseStar3, #responseStar4, #responseStar5 {
 	height: 50px;
@@ -113,6 +145,58 @@
 }
 
 
+/*buttons*/
+input.button {
+	background: #1F253D;
+	color: #95a5a6;
+	font-size: 2em;
+	padding: 0.2em;
+	margin-top : 5px;
+	-webkit-transition: background 1s ease-in-out;
+	-moz-transition: background 1s ease-in-out;
+	-ms-transition: background 1s ease-in-out;
+	-o-transition: background 1s ease-in-out;
+	transition: background 1s ease-in-out;
+	font-family: 'Open Sans', serif;
+	font-size: 30px;
+}
+
+input.button:hover {
+	background: #e64c65;
+	color: #fff;
+	-webkit-transition: background 1s ease-in-out;
+	-moz-transition: background 1s ease-in-out;
+	-ms-transition: background 1s ease-in-out;
+	-o-transition: background 1s ease-in-out;
+	transition: background 1s ease-in-out;
+	cursor: pointer;
+}
+
+#chooseButton {
+	background: #1F253D;
+	color: #95a5a6;
+	font-size: 2em;
+	padding: 0.2em;
+	margin-top : 5px;
+	-webkit-transition: background 1s ease-in-out;
+	-moz-transition: background 1s ease-in-out;
+	-ms-transition: background 1s ease-in-out;
+	-o-transition: background 1s ease-in-out;
+	transition: background 1s ease-in-out;
+	font-family: 'Open Sans', serif;
+	font-size: 30px;
+}
+
+#chooseButton:hover {
+	background: #e64c65;
+	color: #fff;
+	-webkit-transition: background 1s ease-in-out;
+	-moz-transition: background 1s ease-in-out;
+	-ms-transition: background 1s ease-in-out;
+	-o-transition: background 1s ease-in-out;
+	transition: background 1s ease-in-out;
+	cursor: pointer;
+}
 
 
 
