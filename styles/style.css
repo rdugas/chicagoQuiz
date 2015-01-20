@@ -7,6 +7,15 @@
 	border-color: lightgreen;
 }*/
 
+/*use more specific rule to override glyphicon display*/
+.glyphicon.initialHide {
+	display: none;
+}
+
+.initialHide {
+	display: none;
+}
+
 #topflagWhite {
 	height: 75px;
 	text-align: center;
@@ -15,6 +24,10 @@
 	/*padding-top: 5px;*/
 	font-family: 'Abril Fatface', cursive;
 	/*font-family: 'Open Sans', serif;*/
+}
+
+#flagNumber{
+	font-family: 'Open Sans', serif;
 }
 
 #flagBlueStripe {
@@ -44,15 +57,18 @@
    font-family: 'Open Sans', serif;
 }
 
+.question {
+	display: none;
+	vertical-align: text-bottom;
+}
+
 #startButton {
 	text-align: center;
 }
 
-/*#question1, */
-#question2, #question3, #question4, #question5 {
+/*#question1, #question2, #question3, #question4, #question5 {
 	display: none; 
-	/*initial state hidden*/
-}
+}*/
 
 /*#answerChoiceList1 */
 #answerChoiceList2

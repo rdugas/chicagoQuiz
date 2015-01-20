@@ -61,27 +61,27 @@
                 <li>
                     <span id="flagNumber">1</span>
                     <img id="responseStar1" src="images/star.png">
-                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                    <span class="glyphicon glyphicon-thumbs-up initialHide"></span>
                 </li>
                 <li>
                     <span id="flagNumber">2</span>
                     <img id="responseStar2" src="images/star.png">
-                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                    <span class="glyphicon glyphicon-thumbs-down initialHide"></span>
                 </li>
                 <li>
                     <span id="flagNumber">3</span>
                     <img id="responseStar3" src="images/star.png">
-                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                    <span class="glyphicon glyphicon-thumbs-up initialHide"></span>
                 </li>
                 <li>
                     <span id="flagNumber">4</span>
                     <img id="responseStar4" src="images/star.png">
-                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                    <span class="glyphicon glyphicon-thumbs-up initialHide"></span>
                 </li>
                 <li>
                     <span id="flagNumber">5</span>
                     <img id="responseStar5" src="images/star.png">
-                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                    <span class="glyphicon glyphicon-thumbs-up initialHide"></span>
                 </li>
 
             </ul>
@@ -94,16 +94,18 @@
             <p>Are you ready to test your knowledge of Chicago?</p>
             <input type="button" id="startButton" class="button" name="start" value="Start Game" />
         </div>
-        <div id="question1">First cool question</div>
-        <div id="question2">Second cool question</div>
-        <div id="question3">Third cool question</div>
-        <div id="question4">Fourth cool question</div>
-        <div id="question5">Fifth cool question</div>
+        <div id="questionList">
+            <div class="question" id="question1">First cool question</div>
+            <div class="question" id="question2">Second cool question</div>
+            <div class="question" id="question3">Third cool question</div>
+            <div class="question" id="question4">Fourth cool question</div>
+            <div class="question" id="question5">Fifth cool question</div>
+        </div>
     </section>
 
 
     <section class="responseSection">
-        <div id="responseContainer">
+        <div id="responseContainer" class="initialHide">
             <p>Choose The Best Answer and Click Choose!</p>
             <ul class="answerList" id="answerChoiceList1">
                 <!-- hack - give each radio button same name so only one can be selected -->
