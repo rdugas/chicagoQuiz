@@ -17,6 +17,10 @@ $(document).ready(function(){
 	});
 
 	$("#chooseButton").click(function() {
+		chooseAndEvaluateAnswer();
+	});
+
+	function chooseAndEvaluateAnswer() {
 		console.log("choose clicked");
 		
 		if (isAnswerCorrect()){
@@ -34,8 +38,7 @@ $(document).ready(function(){
 		}
 
 		showQuestion(questionNumber);
-
-	});
+	}
 
 	function startGame(){
 		questionNumber = 0;

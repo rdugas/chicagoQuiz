@@ -52,6 +52,7 @@
 .questionSection {
    height: 120px;
    margin: auto;
+   width: 60%;
    text-align: center;
    position: relative;
    font-family: 'Open Sans', serif;
@@ -60,6 +61,7 @@
 .question {
 	display: none;
 	vertical-align: text-bottom;
+	font-size: 1.5em;
 }
 
 #startButton {
