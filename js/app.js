@@ -45,9 +45,9 @@ $(document).ready(function(){
 
 	function populateAnswerList(){
 		console.log("populateAnswerList called");
-		$("#answer1").text(questions[0].answer);
-		$("#answer2").text(questions[0].wrongAnswer1);
-		$("#answer3").text(questions[0].wrongAnswer2);
+		$("#choiceLabel1").text(questions[0].answer);
+		$("#choiceLabel2").text(questions[0].wrongAnswer1);
+		$("#choiceLabel3").text(questions[0].wrongAnswer2);
 	}
 
 	// function logMethodCall () {

@@ -104,17 +104,16 @@
     </section>
 
 
+    
+    <!-- change to use form and elements -->
     <section class="responseSection">
         <div id="responseContainer" class="initialHide">
             <p>Choose The Best Answer and Click Choose!</p>
             <ul class="answerList" id="answerChoiceList1">
                 <!-- hack - give each radio button same name so only one can be selected -->
-                <li class="answer" id="answer1">
-                    <input type="radio" name="one"></li>
-                <li class="answer" id="answer2">
-                    <input type="radio" name="one"></li>
-                <li class="answer" id="answer3">
-                    <input type="radio" name="one"></li>
+                <input type="radio" name="one" id="choice1"><label id="choiceLabel1"></label><br>
+                <input type="radio" name="one" id="choice2"><label id="choiceLabel2"></label><br>
+                <input type="radio" name="one" id="choice3"><label id="choiceLabel3"></label>
             </ul>
 
             <input type="button" id="chooseButton" class="submit" name="coose" value="Choose" />
