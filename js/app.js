@@ -8,6 +8,9 @@ $(document).ready(function(){
 	//on start button press
 	//hide #questionIntro
 
+	var questions = loadQuestions();
+
+
 	$("#startButton").click(function() {
 		console.log("start clicked");
 		startGame();
