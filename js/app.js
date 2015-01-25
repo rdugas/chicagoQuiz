@@ -29,6 +29,7 @@ $(document).ready(function(){
 		showQuestion(0);
 		$("#responseContainer").show();
 		populateAnswerList(0);
+		randomlySortList(".answerList>li");
 	}
 
 	function showQuestion(questionNumber){
@@ -38,9 +39,16 @@ $(document).ready(function(){
 
 	function populateAnswerList(answerListForQuestionNumber){
 		console.log("populateAnswerList called");
+		//randomly Populate List
 		$("#choiceLabel1").text(questions[answerListForQuestionNumber].answer);
 		$("#choiceLabel2").text(questions[answerListForQuestionNumber].wrongAnswer1);
 		$("#choiceLabel3").text(questions[answerListForQuestionNumber].wrongAnswer2);
+
+	}
+
+	function randomlySortList(listSelector){
+		console.log("tiny sort the list");
+		tinysort($(listSelector),{order:'rand'});
 	}
 
 	function verifyAnswer(){
@@ -48,8 +56,16 @@ $(document).ready(function(){
 		selectedAnswer = getSelectedAnswerValue();	
 	}
 
+
 	function getSelectedAnswerValue(){
-		alert($('input[name=radioName]:checked').val());
+		selectedAnswerValue = $('input[name=radioName]:checked').val();
+		console.log(selectedAnswerValue);
+		
+		if (!selectedAnswerValue)
+			alert("Please select an answer!");
+		else{
+		 	return selectedAnswerValue;
+		}
 	}
 
 	// function logMethodCall () {

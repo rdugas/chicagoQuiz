@@ -87,13 +87,23 @@
    font-family: 'Open Sans', serif;
 }
 
+.responseSection p {
+   font-weight: 900;
+}
+
+.responseSection label {
+   font-weight: 500;
+}
+
 #responseContainer {
    /*display: none; initial state*/
 }
 
 .answerlist {
 	width: 100px;
+	
 }
+
 /*
 .answer {
 	display: inline;

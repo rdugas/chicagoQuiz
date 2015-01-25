@@ -18,12 +18,17 @@
     <!-- google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
 
+
+    <!-- TinySort -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.1.1/tinysort.min.js"></script>
+
     <!-- JavaScript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     
     <!-- does order matter? of files loaded depending on which calls happen -->
     <script type="text/javascript" src="js/questions.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+
 
 
 </head>
@@ -111,11 +116,11 @@
             <p>Choose The Best Answer and Click Choose!</p>
             <ul class="answerList" id="answerChoiceList1">
                 <!-- hack - give each radio button same name so only one can be selected -->
-                <input type="radio" name="radioName" value="1"><label id="choiceLabel1"></label><br>
-                <input type="radio" name="radioName" value="2"><label id="choiceLabel2"></label><br>
-                <input type="radio" name="radioName" value="3"><label id="choiceLabel3"></label>
+                <li><input type="radio" name="radioName" value="1"><label id="choiceLabel1"></label></li>
+                <li><input type="radio" name="radioName" value="2"><label id="choiceLabel2"></label></li>
+                <li><input type="radio" name="radioName" value="3"><label id="choiceLabel3"></label></li>
             </ul>
-
+            
             <input type="button" id="chooseButton" class="submit" name="coose" value="Choose" />
         </div>
 
