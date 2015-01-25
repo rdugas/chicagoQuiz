@@ -16,38 +16,40 @@ $(document).ready(function(){
 		startGame();
 	});
 
+
+	$("#chooseButton").click(function() {
+		console.log("choose clicked");
+		verifyAnswer();
+	});
+
 	function startGame(){
 		console.log("game started - showing first Question.");
 		$("#questionIntro").hide();
-		showFirstQuestion();
-		populateAnswerList();
-	}
-
-	function showQuestion(questionNumberId){
-		//hide all questions
-		//show question with Id questionNumberId
-		console.log("showQuestion called with questionNumberId: " + questionNumberId);
-		$(questionNumberId).show();
-	}
-
-	function showAnswers(answerChoiceListId){
-		//hide all questions
-		//show question with Id questionNumberId
-		console.log("showAnswer called with answerChoiceListId: " + answerChoiceListId);
-		$(answerChoiceListId).show();
-	}
-
-	function showFirstQuestion(){
-		console.log("showFirstQuestion Called");
-		$("#questionArea").show().text(questions[0].question);
+		$("#questionArea").show();
+		showQuestion(0);
 		$("#responseContainer").show();
+		populateAnswerList(0);
 	}
 
-	function populateAnswerList(){
+	function showQuestion(questionNumber){
+		console.log("showQuestion Called for question:" + questionNumber);
+		$("#questionArea").show().text(questions[questionNumber].question);
+	}
+
+	function populateAnswerList(answerListForQuestionNumber){
 		console.log("populateAnswerList called");
-		$("#choiceLabel1").text(questions[0].answer);
-		$("#choiceLabel2").text(questions[0].wrongAnswer1);
-		$("#choiceLabel3").text(questions[0].wrongAnswer2);
+		$("#choiceLabel1").text(questions[answerListForQuestionNumber].answer);
+		$("#choiceLabel2").text(questions[answerListForQuestionNumber].wrongAnswer1);
+		$("#choiceLabel3").text(questions[answerListForQuestionNumber].wrongAnswer2);
+	}
+
+	function verifyAnswer(){
+		correctAnswerValue = 
+		selectedAnswer = getSelectedAnswerValue();	
+	}
+
+	function getSelectedAnswerValue(){
+		alert($('input[name=radioName]:checked').val());
 	}
 
 	// function logMethodCall () {
