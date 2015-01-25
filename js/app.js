@@ -20,7 +20,7 @@ $(document).ready(function(){
 		console.log("game started - showing first Question.");
 		$("#questionIntro").hide();
 		showFirstQuestion();
-		showAnswers("#answerChoiceList1");
+		populateAnswerList();
 	}
 
 	function showQuestion(questionNumberId){
@@ -40,9 +40,15 @@ $(document).ready(function(){
 	function showFirstQuestion(){
 		console.log("showFirstQuestion Called");
 		$("#questionArea").show().text(questions[0].question);
+		$("#responseContainer").show();
 	}
 
-
+	function populateAnswerList(){
+		console.log("populateAnswerList called");
+		$("#answer1").text(questions[0].answer);
+		$("#answer2").text(questions[0].wrongAnswer1);
+		$("#answer3").text(questions[0].wrongAnswer2);
+	}
 
 	// function logMethodCall () {
 

@@ -1,9 +1,8 @@
-
 function question(question, answer, wrongAnswer1, wrongAnswer2, hint) {
 	this.question = question;
-	this.answer = question;
-	this.wrongAnswer1 = question;
-	this.wrongAnswer2 = question;
+	this.answer = answer;
+	this.wrongAnswer1 = wrongAnswer1;
+	this.wrongAnswer2 = wrongAnswer2;
 	this.hint = hint;
 }
 
