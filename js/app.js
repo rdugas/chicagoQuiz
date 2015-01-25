@@ -19,7 +19,7 @@ $(document).ready(function(){
 	function startGame(){
 		console.log("game started - showing first Question.");
 		$("#questionIntro").hide();
-		showQuestion("#question1");
+		showFirstQuestion();
 		showAnswers("#answerChoiceList1");
 	}
 
@@ -36,6 +36,13 @@ $(document).ready(function(){
 		console.log("showAnswer called with answerChoiceListId: " + answerChoiceListId);
 		$(answerChoiceListId).show();
 	}
+
+	function showFirstQuestion(){
+		console.log("showFirstQuestion Called");
+		$("#questionArea").show().text(questions[0].question);
+	}
+
+
 
 	// function logMethodCall () {
 

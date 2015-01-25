@@ -9,13 +9,13 @@ function question(question, answer, wrongAnswer1, wrongAnswer2, hint) {
 
 var question1 = new question("Chicago is a word derived from the native american shiikaakwa.  What does this word translate to?", "Wild Onion", "Lake City", "Lake Onion", "Some say Chicago got its name from this smell!");
 
-var question2 = new question("Question 2", "Wild Onion", "Lake City", "Lake Onion", "Some say Chicago got its name from this smell!");
+var question2 = new question("What is the tallest building in Chicago?", "Willis Tower", "Hancock Building", "Trump Tower", "People must have liked shopping at Sears.");
 
-var question3 = new question("Question 3", "Wild Onion", "Lake City", "Lake Onion", "Some say Chicago got its name from this smell!");
+var question3 = new question("Chicago is the third largest city in the USA.  Which city does NOT have more people than Chicago?", "Houston", "Los Angeles", "New York", "We messed with Texas.");
 
-var question4 = new question("Question 4", "Wild Onion", "Lake City", "Lake Onion", "Some say Chicago got its name from this smell!");
+var question4 = new question("Which movie was not filmed in Chicago?", "Men In Black", "Bad Boys", "A League of Their Own", "Gettin Jiggy with it somewhere else.");
 
-var question5 = new question("Question 5", "Wild Onion", "Lake City", "Lake Onion", "Some say Chicago got its name from this smell!");
+var question5 = new question("What is the name of the largest T-Rex skeleton ever discovered, which was purchased by the Field Museum in 1997?", "Sue", "Sandy", "Sammie", "A boy was also named this.");
 
 
 function loadQuestions(count){
