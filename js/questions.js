@@ -7,6 +7,7 @@ function question(question, answer, wrongAnswer1, wrongAnswer2, hint) {
 	this.hint = hint;
 }
 
+// refactor: do in loop
 function questionList () {
 
 	var questions = [];
