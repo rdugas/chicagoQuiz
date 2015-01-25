@@ -16,34 +16,54 @@ $(document).ready(function(){
 		startGame();
 	});
 
-
 	$("#chooseButton").click(function() {
 		console.log("choose clicked");
-		verifyAnswer();
+		
+		if (isAnswerCorrect()){
+			thumbsUpOnStar(questionNumber);
+			alert("You got it right! - next question");
+			questionNumber += 1;
+			console.log("question: " + questionNumber);
+		}
+		else
+		{
+			console.log("wrong answer");
+			alert("You got it wrong! - next question");
+			questionNumber += 1;
+			console.log("question: " + questionNumber);
+		}
+
+		showQuestion(questionNumber);
+
 	});
 
 	function startGame(){
+		questionNumber = 0;
 		console.log("game started - showing first Question.");
+		console.log("questoinNumber - " + questionNumber);
 		$("#questionIntro").hide();
-		$("#questionArea").show();
-		showQuestion(0);
-		$("#responseContainer").show();
-		populateAnswerList(0);
-		randomlySortList(".answerList>li");
+		showQuestion(questionNumber);
 	}
 
 	function showQuestion(questionNumber){
+		
+		clearAnswerSelection();
 		console.log("showQuestion Called for question:" + questionNumber);
 		$("#questionArea").show().text(questions[questionNumber].question);
+		showResponsesForQuestion(questionNumber);
+		randomlySortList(".answerList>li");	//not sure where this should go
 	}
 
+	function showResponsesForQuestion(questionNumber){
+		$("#responseContainer").show(); //move this so it doesnt get called each time
+		populateAnswerList(questionNumber);
+	}
+	
 	function populateAnswerList(answerListForQuestionNumber){
-		console.log("populateAnswerList called");
-		//randomly Populate List
-		$("#choiceLabel1").text(questions[answerListForQuestionNumber].answer);
-		$("#choiceLabel2").text(questions[answerListForQuestionNumber].wrongAnswer1);
-		$("#choiceLabel3").text(questions[answerListForQuestionNumber].wrongAnswer2);
-
+		console.log("populateAnswerList called for question: " + answerListForQuestionNumber);
+		$("#choiceCorrect").text(questions[answerListForQuestionNumber].answer);
+		$("#choiceWrong1").text(questions[answerListForQuestionNumber].wrongAnswer1);
+		$("#choiceWrong2").text(questions[answerListForQuestionNumber].wrongAnswer2);
 	}
 
 	function randomlySortList(listSelector){
@@ -51,9 +71,9 @@ $(document).ready(function(){
 		tinysort($(listSelector),{order:'rand'});
 	}
 
-	function verifyAnswer(){
-		correctAnswerValue = 
-		selectedAnswer = getSelectedAnswerValue();	
+	function isAnswerCorrect(){
+		//answer value always 1
+		return 1 == getSelectedAnswerValue();
 	}
 
 
@@ -67,6 +87,21 @@ $(document).ready(function(){
 		 	return selectedAnswerValue;
 		}
 	}
+
+	function clearAnswerSelection(){
+		$('input[name=radioName]:checked').removeAttr("checked");
+		console.log("clearing selections");
+	}
+
+	function thumbsUpOnStar(starNumber){
+		console.log("star " + starNumber + "thumbs up");
+	}
+
+	function thumbsDownOnStar(starNumber){
+		console.log("star " + starNumber + "thumbs down");
+	}
+
+
 
 	// function logMethodCall () {
 
