@@ -9,6 +9,11 @@ $(document).ready(function(){
 	//hide #questionIntro
 
 	var questions = loadQuestions();
+	//change this variable name - used too much
+	//tacks array index of questions array
+	var questionNumberAnswered = 0; //will make everything 1 indexed
+	var numberOfQuestions = questions.length; //already 1 indexed
+	console.log("number of questions: " + numberOfQuestions);
 
 
 	$("#startButton").click(function() {
@@ -20,46 +25,66 @@ $(document).ready(function(){
 		chooseAndEvaluateAnswer();
 	});
 
+
+
+	function startGame(){
+		console.log("game started - showing first Question.");
+		console.log("questionNumberAnswered - " + questionNumberAnswered);
+		$("#questionIntro").hide();
+		showQuestion(questionNumberAnswered);
+	}
+
+	function endGame(){
+		alert("end game stuff");
+	}
+
 	function chooseAndEvaluateAnswer() {
 		console.log("choose clicked");
 		
 		if (isAnswerCorrect()){
-			thumbsUpOnStar(questionNumber);
+			thumbsUpOnStar(questionNumberAnswered);
 			alert("You got it right! - next question");
-			questionNumber += 1;
-			console.log("question: " + questionNumber);
 		}
 		else
 		{
 			console.log("wrong answer");
 			alert("You got it wrong! - next question");
-			questionNumber += 1;
-			console.log("question: " + questionNumber);
 		}
+		
+		console.log("questionNumber: " + (questionNumberAnswered + 1));
+		console.log("numberOfQuestions: " + numberOfQuestions);
 
-		showQuestion(questionNumber);
+		if (lastQuestionAnswered())
+		{	
+			endGame();	
+		}
+		else {
+			questionNumberAnswered += 1;
+			console.log("incrementing question to: " + questionNumberAnswered) 
+			showQuestion(questionNumberAnswered);
+		}
 	}
 
-	function startGame(){
-		questionNumber = 0;
-		console.log("game started - showing first Question.");
-		console.log("questoinNumber - " + questionNumber);
-		$("#questionIntro").hide();
-		showQuestion(questionNumber);
+	function lastQuestionAnswered() {
+		console.log("lastquestion answered runs");
+		var done = (questionNumberAnswered == numberOfQuestions);
+		console.log("lastquestion answered runs");
+		console.log(done);
+		return (questionNumberAnswered + 1 == numberOfQuestions);
 	}
 
 	function showQuestion(questionNumber){
 		
 		clearAnswerSelection();
-		console.log("showQuestion Called for question:" + questionNumber);
-		$("#questionArea").show().text(questions[questionNumber].question);
-		showResponsesForQuestion(questionNumber);
+		console.log("showQuestion Called for question:" + questionNumberAnswered);
+		$("#questionArea").show().text(questions[questionNumberAnswered].question);
+		showResponsesForQuestion(questionNumberAnswered);
 		randomlySortList(".answerList>li");	//not sure where this should go
 	}
 
 	function showResponsesForQuestion(questionNumber){
 		$("#responseContainer").show(); //move this so it doesnt get called each time
-		populateAnswerList(questionNumber);
+		populateAnswerList(questionNumberAnswered);
 	}
 	
 	function populateAnswerList(answerListForQuestionNumber){

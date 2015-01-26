@@ -18,7 +18,7 @@ var question5 = new question("What is the name of the largest T-Rex skeleton eve
 
 
 function loadQuestions(count){
-	console.log("load questions called");
+	  console.log("load questions called");
     var questionArray = [question1, question2, question3, question4, question5]; 
     
     // shuffle array

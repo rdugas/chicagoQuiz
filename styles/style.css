@@ -12,6 +12,10 @@
 	display: none;
 }
 
+label {
+	padding-left: 4px;
+}
+
 .initialHide {
 	display: none;
 }
