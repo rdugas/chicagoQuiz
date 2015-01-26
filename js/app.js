@@ -42,12 +42,14 @@ $(document).ready(function(){
 		console.log("choose clicked");
 		
 		if (isAnswerCorrect()){
+			console.log("right answer");
 			thumbsUpOnStar(questionNumberAnswered);
 			alert("You got it right! - next question");
 		}
 		else
 		{
 			console.log("wrong answer");
+			thumbsDownOnStar(questionNumberAnswered);
 			alert("You got it wrong! - next question");
 		}
 		
@@ -122,11 +124,19 @@ $(document).ready(function(){
 	}
 
 	function thumbsUpOnStar(starNumber){
+		thumbsUpClass = "glyphicon glyphicon-thumbs-up";
 		console.log("star " + starNumber + "thumbs up");
+		findStarInAnswerTracker(starNumber).find(".responseIcon").addClass(thumbsUpClass);
 	}
 
 	function thumbsDownOnStar(starNumber){
+		thumbsDownClass = "glyphicon glyphicon-thumbs-down";
 		console.log("star " + starNumber + "thumbs down");
+		findStarInAnswerTracker(starNumber).find(".responseIcon").addClass(thumbsDownClass);
+	}
+
+	function findStarInAnswerTracker(starNumber){
+		return $("#responseStarList li").eq(starNumber);
 	}
 
 

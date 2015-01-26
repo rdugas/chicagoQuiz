@@ -30,7 +30,7 @@ label {
 	/*font-family: 'Open Sans', serif;*/
 }
 
-#flagNumber{
+.flagNumber{
 	font-family: 'Open Sans', serif;
 }
 
@@ -183,9 +183,15 @@ label {
 #responseStar1, #responseStar2, #responseStar3, #responseStar4, #responseStar5 {
 	height: 50px;
 	width: 50px;
+	position: relative;
+	top: 0;
+	left: 0;
 	/*background-repeat: no-repeat;*/
 }
 
+.responseIcon{
+	position: absolute;
+}
 
 #flagNumber {
 	text-align: center;
@@ -204,7 +210,13 @@ label {
 
 #responseStarList > li {
 	padding-bottom: 25px;
-	text-align: center;
+	text-align: right;
+	margin-right: 30px;
+}
+
+#responseStarList > span {
+	text-align: right;
+	position: absolute;
 }
 
 
