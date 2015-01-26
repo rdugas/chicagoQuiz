@@ -14,6 +14,7 @@ $(document).ready(function(){
 	var questionNumberAnswered = 0; //will make everything 1 indexed
 	var numberOfQuestions = questions.length; //already 1 indexed
 	console.log("number of questions: " + numberOfQuestions);
+	var correctAnswersCount = 0;
 
 
 	$("#startButton").click(function() {
@@ -25,7 +26,20 @@ $(document).ready(function(){
 		chooseAndEvaluateAnswer();
 	});
 
+	$("#nextButton").click(function() {
+		moveToNextQuestion();
+	});
 
+	$("#playAgain").click(function() {
+		location.reload(true);
+	});
+
+
+	function newGame(){
+		// future to be used on new game
+		// reset globals
+		// initial state of all divs
+	}
 
 	function startGame(){
 		console.log("game started - showing first Question.");
@@ -35,26 +49,46 @@ $(document).ready(function(){
 	}
 
 	function endGame(){
-		alert("end game stuff");
+		$("#responseMessage p").text("Congrats - you got " + correctAnswersCount + " questions right!");
+		$("#chooseButton").hide();
+		$("#playAgain").show();
 	}
 
 	function chooseAndEvaluateAnswer() {
 		console.log("choose clicked");
-		
-		if (isAnswerCorrect()){
+		selectedAnswerValue = getSelectedAnswerValue();
+		console.log("selectedAnswervalue:" + selectedAnswerValue);
+
+		console.log("isAnswerCorrect: " + isAnswerCorrect());	
+		if (!selectedAnswerValue){
+			$("#responseMessage p").text("Please Select An Answer!");
+		}
+		else if (isAnswerCorrect()){
 			console.log("right answer");
+			correctAnswersCount += 1;
 			thumbsUpOnStar(questionNumberAnswered);
-			alert("You got it right! - next question");
+			$("#responseMessage p").text("You got it right! - next question.");
+			$("#chooseButton").attr("disabled", true);
+			$("#nextButton").show();
 		}
 		else
 		{
 			console.log("wrong answer");
 			thumbsDownOnStar(questionNumberAnswered);
-			alert("You got it wrong! - next question");
+			$("#responseMessage p").text("You got it wrong! - go to next question.");
+			$("#chooseButton").attr("disabled", "disabled");
+			$("#nextButton").show();
 		}
 		
 		console.log("questionNumber: " + (questionNumberAnswered + 1));
-		console.log("numberOfQuestions: " + numberOfQuestions);
+		console.log("numberOfQuestions: " + numberOfQuestions);		
+	}
+
+	function moveToNextQuestion(){
+
+		$("#nextButton").hide();
+		$("#responseMessage p").text("");
+		$("#chooseButton").removeAttr("disabled");
 
 		if (lastQuestionAnswered())
 		{	
@@ -86,7 +120,7 @@ $(document).ready(function(){
 
 	function showResponsesForQuestion(questionNumber){
 		$("#responseContainer").show(); //move this so it doesnt get called each time
-		populateAnswerList(questionNumberAnswered);
+		populateAnswerList(questionNumber);
 	}
 	
 	function populateAnswerList(answerListForQuestionNumber){
@@ -103,19 +137,13 @@ $(document).ready(function(){
 
 	function isAnswerCorrect(){
 		//answer value always 1
+		console.log("isAnswerCorrect: " + (1 == getSelectedAnswerValue()));
 		return 1 == getSelectedAnswerValue();
 	}
 
 
 	function getSelectedAnswerValue(){
-		selectedAnswerValue = $('input[name=radioName]:checked').val();
-		console.log(selectedAnswerValue);
-		
-		if (!selectedAnswerValue)
-			alert("Please select an answer!");
-		else{
-		 	return selectedAnswerValue;
-		}
+		return $('input[name=radioName]:checked').val();
 	}
 
 	function clearAnswerSelection(){
@@ -138,13 +166,6 @@ $(document).ready(function(){
 	function findStarInAnswerTracker(starNumber){
 		return $("#responseStarList li").eq(starNumber);
 	}
-
-
-
-	// function logMethodCall () {
-
-	// }
-
 });
 
 

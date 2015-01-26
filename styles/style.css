@@ -105,6 +105,10 @@ label {
    /*display: none; initial state*/
 }
 
+#responseMessage {
+	padding-top: 4px;
+}
+
 .answerlist {
 	width: 100px;
 	
@@ -250,7 +254,6 @@ input.button:hover {
 #chooseButton {
 	background: #1F253D;
 	color: #95a5a6;
-	font-size: 2em;
 	padding: 0.2em;
 	margin-top : 5px;
 	-webkit-transition: background 1s ease-in-out;
@@ -259,7 +262,7 @@ input.button:hover {
 	-o-transition: background 1s ease-in-out;
 	transition: background 1s ease-in-out;
 	font-family: 'Open Sans', serif;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 #chooseButton:hover {
@@ -273,7 +276,42 @@ input.button:hover {
 	cursor: pointer;
 }
 
+#chooseButton:disabled {
+	background: lightgrey;
+	color: #fff;
+	cursor: not-allowed;
+}
 
+#nextButton, #playAgain {
+	background: lightblue;
+	color: darkBlue;
+	padding: 0.2em;
+	margin-top : 5px;
+	font-family: 'Open Sans', serif;
+	font-weight: 200;
+	font-size: 12px;
+	display: none;
+}
+
+#nextButton:hover,
+#playAgain:hover {
+	font-weight: 800;
+}
+
+#nextButton {
+	background: lightblue;
+	color: darkBlue;
+	padding: 0.2em;
+	margin-top : 5px;
+	font-family: 'Open Sans', serif;
+	font-weight: 200;
+	font-size: 12px;
+	display: none;
+}
+
+#nextButton:hover {
+	font-weight: 800;
+}
 
 
 
